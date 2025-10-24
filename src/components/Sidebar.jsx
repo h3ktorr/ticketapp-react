@@ -11,6 +11,7 @@ const Sidebar = () => {
 
   function handleLogout() {
     clearSession();
+    toggleSidebar();
     navigate("/");
   }
 
@@ -42,11 +43,17 @@ const Sidebar = () => {
       <div className="sidebar-body">
         <IoCloseSharp className="close-sidebar" onClick={toggleSidebar} />
         <div className="nav-icons">
-          <a href="/">Home</a>
+          <a href="/" onClick={toggleSidebar}>
+            Home
+          </a>
           {session && (
             <>
-              <Link to="/dashboard">Dashboard</Link>
-              <Link to="/tickets">Tickets</Link>
+              <Link onClick={toggleSidebar} to="/dashboard">
+                Dashboard
+              </Link>
+              <Link onClick={toggleSidebar} to="/tickets">
+                Tickets
+              </Link>
             </>
           )}
           {session ? (
