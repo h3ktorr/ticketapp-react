@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef } from "react";
 import { AppContext } from "../context/AppContext";
 import { IoCloseSharp } from "react-icons/io5";
 import { useSession } from "../store/session";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const { isSidebarOpen, toggleSidebar } = useContext(AppContext);
@@ -45,14 +45,14 @@ const Sidebar = () => {
           <a href="/">Home</a>
           {session && (
             <>
-              <a href="/dashboard">Dashboard</a>
-              <a href="/tickets">Tickets</a>
+              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/tickets">Tickets</Link>
             </>
           )}
           {session ? (
             <p onClick={handleLogout}>Logout</p>
           ) : (
-            <a href="/auth/login">Login</a>
+            <Link to="/auth/login">Login</Link>
           )}
         </div>
       </div>
