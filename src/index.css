@@ -93,6 +93,10 @@ body {
   height: 300px;
 }
 
+.hero-left{
+  border-bottom: #fff solid 1px;
+}
+
 .hero .lead {
   color: var(--muted)
 }
