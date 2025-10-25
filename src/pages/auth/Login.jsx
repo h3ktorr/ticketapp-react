@@ -2,9 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
 import { useSession } from "../../store/session";
 import { useState } from "react";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,7 +37,6 @@ export default function Login() {
     } catch (err) {
       const msg = err.message || "Invalid credentials, please try again";
       setError((prev) => ({ ...prev, general: msg }));
-      toast.error(msg); // ✅ show toast here, not in JSX
     }
   }
 
@@ -80,6 +76,12 @@ export default function Login() {
             </p>
           )}
         </div>
+
+        {error.general && (
+          <p className="error" data-testid="test-auth-general-error">
+            {error.general}
+          </p>
+        )}
 
         <button className="btn" type="submit" data-testid="test-auth-submit">
           Login

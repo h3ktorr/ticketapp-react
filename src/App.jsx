@@ -10,8 +10,6 @@ import SiteNav from "./components/siteNav";
 import Footer from "./components/Footer";
 import { AppContextProvider } from "./context/AppContext";
 import Sidebar from "./components/Sidebar";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 function Protected({ children }) {
   const { session } = useSession();
@@ -54,7 +52,6 @@ export default function App() {
             }
           />
         </Routes>
-        <ToastContainer position="top-right" autoClose={1000} />
         <Footer />
       </div>
     </AppContextProvider>

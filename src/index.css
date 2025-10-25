@@ -30,10 +30,6 @@ body {
   flex-direction: column
 }
 
-.Toastify__toast {
-  margin-top: 10rem;
-}
-
 .site-nav {
   display: flex;
   justify-content: space-between;
