@@ -179,6 +179,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
+  width: 100%;
 }
 
 .stats-grid {
@@ -338,6 +339,10 @@ body {
   cursor: pointer;
 }
 
+.description {
+  width: fit-content;
+}
+
 
 /* Footer Styles */
 .footer {
@@ -407,10 +412,6 @@ body {
 
   .stat-card {
     width: 150px;
-  }
-
-  .description{
-    width: 300px;
   }
 
   .dashboard{
