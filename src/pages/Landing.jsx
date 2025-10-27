@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import waveUrl from "../assets/wave.svg";
+import { useSession } from "../store/session";
 
 export default function Landing() {
+  const { session } = useSession();
   return (
     <main className="container hero">
       <section className="hero-left">
@@ -9,14 +11,16 @@ export default function Landing() {
         <p className="lead">
           Manage support tickets smoothly across teams — built with love.
         </p>
-        <div className="cta">
-          <Link to="/auth/signup" className="btn primary">
-            Get Started
-          </Link>
-          <Link to="/auth/login" className="btn primary">
-            Login
-          </Link>
-        </div>
+        {!session && (
+          <div className="cta">
+            <Link to="/auth/signup" className="btn primary">
+              Get Started
+            </Link>
+            <Link to="/auth/login" className="btn primary">
+              Login
+            </Link>
+          </div>
+        )}
       </section>
       <aside className="hero-right">
         <div className="decor-circle circle1" aria-hidden></div>
